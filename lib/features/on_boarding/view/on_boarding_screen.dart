@@ -4,7 +4,6 @@ import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
 import 'package:musicme/features/on_boarding/view/on_boarding_login.dart';
 import 'package:musicme/features/on_boarding/view/onboarding_box.dart';
 import 'package:musicme/features/on_boarding/view/onboarding_form.dart';
-
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingPage extends StatefulWidget {

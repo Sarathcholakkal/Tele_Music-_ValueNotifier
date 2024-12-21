@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:musicme/common/theme/theme.dart';
+import 'package:musicme/features/home/view/bottom_nav.dart';
+import 'package:musicme/features/home/view/custom_appbar.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
-import 'package:musicme/features/splash/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,12 +15,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: themeNotifier,
+      builder: (context, themeMode, child) {
+        return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: lightMode,
+            darkTheme: darkMode,
+            themeMode: themeMode,
+            home: BottomNav()
+            // HomeScreen()
+            // const SplashScreen(),
+            );
+      },
     );
   }
 }

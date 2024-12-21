@@ -13,15 +13,15 @@ class Pallete {
 
 //logo and icons
   static const bottomNavColor = Colors.teal;
+  static const darkThemeIconColor = Color(0xFF713FFD);
+  static const lightThemeIconColor = Color(0xFFFA9E42);
+  static const logoGreenColor = Color(0xFF00C853);
 
   //card and pop ups
   // static const bottomNavColor = whiteColor;
 
 // initialie defined some defult colors:use unknown
 
-  static const logoGreenColor = Color(0xFF00C853);
-  static const darkMModeIconColor = Color(0xFF713FFD);
-  static const lightModeIconColor = Color(0xFFFA9E42);
   static const countBoxColor = Colors.black38;
   static const Color inactiveSeekColor = Colors.white38;
   static const searchBoxGrey = Color(0xFF4D4D4D);

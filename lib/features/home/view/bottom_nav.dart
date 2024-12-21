@@ -60,7 +60,7 @@ class _BottomNavState extends State<BottomNav> {
             itemPadding:
                 const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
             items: _items,
-            backgroundColor: Colors.white60,
+            // backgroundColor: Colors.white60,
             currentIndex: _currentIndex,
             onTap: (index) => setState(
               () {

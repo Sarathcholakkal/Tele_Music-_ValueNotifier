@@ -3,6 +3,7 @@ import 'package:musicme/common/utils/const/layout_spacing.dart';
 import 'package:musicme/features/all_songs/logic/db_functions.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
+import 'package:musicme/features/playback/view/playback_screen.dart';
 
 class ScreenAllSongs extends StatefulWidget {
   const ScreenAllSongs({super.key});
@@ -113,15 +114,15 @@ class _ScreenAllSongsState extends State<ScreenAllSongs> {
                               final singleSongData = filterSongs[filterdindex];
                               return GestureDetector(
                                 onDoubleTap: () {
-                                  // Navigator.of(context).push(
-                                  //   MaterialPageRoute(
-                                  //     builder: (ctx) {
-                                  //       return PlaybackScreen(
-                                  //           songs: filteredSongs,
-                                  //           index: filterdindex);
-                                  //     },
-                                  //   ),
-                                  // );
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (ctx) {
+                                        return PlaybackScreen(
+                                            songs: filteredSongs,
+                                            index: filterdindex);
+                                      },
+                                    ),
+                                  );
                                 },
                                 child: ListSongCard(songItem: singleSongData),
                               );

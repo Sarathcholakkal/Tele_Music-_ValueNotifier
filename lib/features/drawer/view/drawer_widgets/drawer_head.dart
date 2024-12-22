@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:musicme/common/utils/const/image.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
 
 class HeaderDrawer extends StatefulWidget {
@@ -22,7 +21,7 @@ class _HeaderDrawerState extends State<HeaderDrawer> {
         children: [
           Text(
             SharedprefServices.getName() ?? '',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ],
       ),

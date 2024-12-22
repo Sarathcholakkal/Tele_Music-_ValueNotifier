@@ -1,1 +1,1 @@
-enum DrawerSection { aboutus, privacy_policy, send_feedback, none }
+enum DrawerSection { aboutus, privacyPolicy, sendFeedback, none }

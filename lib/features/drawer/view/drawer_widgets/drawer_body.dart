@@ -34,14 +34,14 @@ class _BodyDrawerWidgetState extends State<BodyDrawerWidget> {
             valueListenable: currentPage,
             builder: (context, DrawerSection value, _) {
               return menuItem(2, 'PrivacyPolicy', Icons.privacy_tip_outlined,
-                  value == DrawerSection.privacy_policy);
+                  value == DrawerSection.privacyPolicy);
             },
           ),
           ValueListenableBuilder(
             valueListenable: currentPage,
             builder: (context, DrawerSection value, _) {
               return menuItem(3, 'SendFeedback', Icons.feedback_outlined,
-                  value == DrawerSection.send_feedback);
+                  value == DrawerSection.sendFeedback);
             },
           ),
         ],
@@ -69,7 +69,7 @@ class _BodyDrawerWidgetState extends State<BodyDrawerWidget> {
               );
               break;
             case 2:
-              currentPage.value = DrawerSection.privacy_policy;
+              currentPage.value = DrawerSection.privacyPolicy;
               Navigator.of(context).pop();
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -81,7 +81,7 @@ class _BodyDrawerWidgetState extends State<BodyDrawerWidget> {
               break;
 
             case 3:
-              currentPage.value = DrawerSection.send_feedback;
+              currentPage.value = DrawerSection.sendFeedback;
               Navigator.of(context).pop();
               Navigator.of(context).push(
                 MaterialPageRoute(

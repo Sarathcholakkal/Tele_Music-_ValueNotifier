@@ -22,8 +22,8 @@ final lightMode = ThemeData(
       backgroundColor: Colors.white, // Primary color
       foregroundColor: Colors.black, // Text/icon color
     ),
-    navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: const Color(0xFF919199), shadowColor: Colors.black));
+    navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: Color(0xFF919199), shadowColor: Colors.black));
 
 // Define the dark theme
 final darkMode = ThemeData(
@@ -48,7 +48,7 @@ final darkMode = ThemeData(
     backgroundColor: Colors.black, // Primary color
     foregroundColor: Colors.white, // Text/icon color
   ),
-  navigationBarTheme: NavigationBarThemeData(
+  navigationBarTheme: const NavigationBarThemeData(
     shadowColor: Colors.white,
     backgroundColor: Colors.white,
   ),

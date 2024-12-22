@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   const NameSection(),
 
-                  CategorySection(),
+                  const CategorySection(),
                   // FrequentlyPlayedTittle(tittle: 'Frequently Played'),
                   // FrequentlyPlayedList(),
                   // RecentlyPlayedTittle(tittle: "Recently Played"),

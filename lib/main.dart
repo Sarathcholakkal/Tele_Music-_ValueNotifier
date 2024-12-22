@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:musicme/common/theme/theme.dart';
-import 'package:musicme/features/home/view/bottom_nav.dart';
+import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/home/view/custom_appbar.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
+import 'package:musicme/features/splash/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedprefServices.init();
+  await Hive.initFlutter();
+  if (!Hive.isAdapterRegistered(SongModelClassAdapter().typeId)) {
+    Hive.registerAdapter(SongModelClassAdapter());
+  }
+
   runApp(const MyApp());
 }
 
@@ -19,14 +26,15 @@ class MyApp extends StatelessWidget {
       valueListenable: themeNotifier,
       builder: (context, themeMode, child) {
         return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: lightMode,
-            darkTheme: darkMode,
-            themeMode: themeMode,
-            home: BottomNav()
-            // HomeScreen()
-            // const SplashScreen(),
-            );
+          debugShowCheckedModeBanner: false,
+          theme: lightMode,
+          darkTheme: darkMode,
+          themeMode: themeMode,
+          home:
+              //  BottomNav()
+              // HomeScreen()
+              const SplashScreen(),
+        );
       },
     );
   }

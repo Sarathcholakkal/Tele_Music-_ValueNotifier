@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:musicme/features/all_songs/logic/db_functions.dart';
 import 'package:musicme/features/home/view/bottom_nav.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
 import 'package:musicme/features/on_boarding/view/on_boarding_screen.dart';
@@ -26,6 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 2));
 
     await permissionStatusChecker();
+    initDatabase();
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
           builder: (ctx) => SharedprefServices.isNameStored()
@@ -35,13 +37,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   //===================================================================
-//   Future<void> initDatabase() async {
-//     await storeSongs();
-//     await getSongs();
-//     await storelastSongs();
-//     await getlastSongs();
-//     await fetchRecentlyPlayedSongs();
-//   }
+  Future<void> initDatabase() async {
+    await storeSongs();
+    await getSongs();
+    // await storelastSongs();
+    // await getlastSongs();
+    // await fetchRecentlyPlayedSongs();
+  }
   //?============================================================================ permissionStatusChecker====================
 
   Future<void> permissionStatusChecker() async {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
 import 'package:musicme/common/utils/const/helper.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
+import 'package:musicme/features/favorites/logic/db_function.dart';
+import 'package:musicme/features/playback/logic/favorite_checker.dart';
 import 'package:musicme/features/playback/view/playback_appbar.dart';
 import 'package:musicme/features/playback/view/playback_artwork.dart';
 import 'package:musicme/features/playback/view/playback_slide.dart';
@@ -40,7 +41,6 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
     super.initState();
 
     _playSongs(widget.songs);
-    // _updateFavoriteStatus();
 
     Helper.player.positionStream.listen((p) {
       position.value = p;
@@ -57,10 +57,11 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
     Helper.player.currentIndexStream.listen((index) {
       if (index != null) {
         currentSongIndex.value = index;
-        // _updateFavoriteStatus();
+
         //? used for update playing time
         if (index < widget.songs.length) {
           final currentSong = widget.songs[index];
+          _updateFavoriteStatus();
           // updateRecentlytPlayed(currentSong);
           // incrementPlayCount(currentSong);
         }
@@ -70,13 +71,13 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
 
   //===========================================================================init state ends
 
-  // Future<void> _updateFavoriteStatus() async {
-  //   if (currentSongIndex.value < widget.songs.length) {
-  //     final currentSong = widget.songs[currentSongIndex.value];
-  //     final isFavorite = await checkFavorite(currentSong);
-  //     _isFavorite.value = isFavorite;
-  //   }
-  // }
+  Future<void> _updateFavoriteStatus() async {
+    if (currentSongIndex.value < widget.songs.length) {
+      final currentSong = widget.songs[currentSongIndex.value];
+      final isFavorite = await checkFavorite(currentSong);
+      _isFavorite.value = isFavorite;
+    }
+  }
 
   //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -196,11 +197,11 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
                             final currentSong =
                                 widget.songs[currentSongIndex.value];
 
-                            // if (_isFavorite.value) {
-                            //   storeFavoriteSongs(currentSong);
-                            // } else {
-                            //   removeFavoriteSongs(currentSong.key);
-                            // }
+                            if (_isFavorite.value) {
+                              storeFavoriteSongs(currentSong);
+                            } else {
+                              removeFavoriteSongs(currentSong.key);
+                            }
                           },
                           icon: ValueListenableBuilder<bool>(
                             valueListenable: _isFavorite,
@@ -287,10 +288,6 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
                     },
                   )
                 ],
-                //album art work
-
-                // song duration progress
-                // playback control
               ),
             ),
           ),

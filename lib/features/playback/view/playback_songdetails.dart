@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicme/common/widgets/movig_text_large.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 
 class SongDetailsSection extends StatelessWidget {
@@ -20,13 +21,16 @@ class SongDetailsSection extends StatelessWidget {
               height: 40,
               width: 280,
               child: Center(
-                child: Text(
-                  songs[index].displayNameWOExt,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ),
+                  child: MovigTextLarge(
+                name: songs[index].displayNameWOExt,
+              )
+                  // Text(
+                  //   songs[index].displayNameWOExt,
+                  //   overflow: TextOverflow.ellipsis,
+                  //   style: const TextStyle(
+                  //       fontSize: 20, fontWeight: FontWeight.bold),
+                  // ),
+                  ),
             ),
             SizedBox(
               width: 280,

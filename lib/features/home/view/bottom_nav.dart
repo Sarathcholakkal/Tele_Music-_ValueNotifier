@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:musicme/common/utils/const/pallets.dart';
 import 'package:musicme/features/all_songs/view/all_song_screen.dart';
+import 'package:musicme/features/favorites/view/favorites_songs_screen.dart';
 import 'package:musicme/features/home/view/home_screen.dart';
 
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 var _screens = [
   const HomeScreen(),
-  const HomeScreen(),
-  const ScreenAllSongs(),
+  const FavoriteSongsScreen(),
+  const AllSongsScreen(),
   const HomeScreen(),
   // const Favtest(),
   // const ScreenAllSongs(),

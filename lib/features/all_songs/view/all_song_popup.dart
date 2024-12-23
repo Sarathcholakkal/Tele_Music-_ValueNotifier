@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
+import 'package:musicme/features/favorites/logic/db_function.dart';
+import 'package:musicme/features/playback/logic/favorite_checker.dart';
 import 'package:popover/popover.dart';
 
 class MenuNewButton extends StatelessWidget {
@@ -44,8 +46,8 @@ class _PopupMenuState extends State<PopupMenu> {
 
   //================================
   Future<void> _updateFavoriteStatus() async {
-    // final isFavorite = await checkFavorite(widget.songItem);
-    // _isFavorite.value = isFavorite;
+    final isFavorite = await checkFavorite(widget.songItem);
+    _isFavorite.value = isFavorite;
   }
 
   //========================
@@ -61,27 +63,12 @@ class _PopupMenuState extends State<PopupMenu> {
             onPressed: () async {
               _isFavorite.value = !_isFavorite.value;
 
-              // if (_isFavorite.value) {
-              //   storeFavoriteSongs(widget.songItem);
-              //   Fluttertoast.showToast(
-              //       msg: "song added to favorites",
-              //       toastLength: Toast.LENGTH_SHORT,
-              //       gravity: ToastGravity.BOTTOM,
-              //       timeInSecForIosWeb: 1,
-              //       backgroundColor: Colors.grey,
-              //       textColor: Colors.white,
-              //       fontSize: 10.0);
-              // } else {
-              //   removeFavoriteSongs(widget.songItem.key);
-              //   Fluttertoast.showToast(
-              //       msg: "song removed from favorites",
-              //       toastLength: Toast.LENGTH_SHORT,
-              //       gravity: ToastGravity.BOTTOM,
-              //       timeInSecForIosWeb: 1,
-              //       backgroundColor: Colors.grey,
-              //       textColor: Colors.white,
-              //       fontSize: 10.0);
-              // }
+              if (_isFavorite.value) {
+                storeFavoriteSongs(widget.songItem);
+              } else {
+                removeFavoriteSongs(widget.songItem.key);
+              }
+              Navigator.of(context).pop();
             },
             icon: ValueListenableBuilder<bool>(
               valueListenable: _isFavorite,
@@ -96,11 +83,11 @@ class _PopupMenuState extends State<PopupMenu> {
               builder: (context, isenbled, _) {
                 return isenbled
                     ? const Text(
-                        "Added",
+                        "Remove from Favorites",
                         style: TextStyle(color: Colors.white),
                       )
                     : const Text(
-                        "Add to favorite",
+                        "Add to favorites",
                         style: TextStyle(color: Colors.white),
                       );
               },

@@ -5,14 +5,14 @@ import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 
-class ScreenAllSongs extends StatefulWidget {
-  const ScreenAllSongs({super.key});
+class AllSongsScreen extends StatefulWidget {
+  const AllSongsScreen({super.key});
 
   @override
-  State<ScreenAllSongs> createState() => _ScreenAllSongsState();
+  State<AllSongsScreen> createState() => _AllSongsScreenState();
 }
 
-class _ScreenAllSongsState extends State<ScreenAllSongs> {
+class _AllSongsScreenState extends State<AllSongsScreen> {
   final searchController = TextEditingController();
   String? filter;
   ValueNotifier<List<SongModelClass>> filteredsongsListNotifier =

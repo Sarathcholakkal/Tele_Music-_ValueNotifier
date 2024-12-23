@@ -58,7 +58,6 @@ class _FavoriteSongsScreenState extends State<FavoriteSongsScreen> {
                           hintText: 'What do you want to hear...',
                           contentPadding: EdgeInsets.fromLTRB(20, 5, 10, 5),
                           filled: true,
-                          // Optional: background color
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(
@@ -76,7 +75,7 @@ class _FavoriteSongsScreenState extends State<FavoriteSongsScreen> {
                           children: [
                             ElevatedButton.icon(
                               onPressed: () {
-                                // shuffleSongs();
+                                shuffleFavoriteSongs();
                               },
                               style: ElevatedButton.styleFrom(
                                 minimumSize: const Size(160, 30),

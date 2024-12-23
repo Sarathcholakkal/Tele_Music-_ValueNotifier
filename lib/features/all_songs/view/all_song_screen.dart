@@ -61,7 +61,7 @@ class _AllSongsScreenState extends State<AllSongsScreen> {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () {
-                      // shuffleSongs();
+                      shuffleSongs();
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(160, 30),

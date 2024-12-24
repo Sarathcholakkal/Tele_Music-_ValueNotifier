@@ -61,7 +61,10 @@ class ListSongCard extends StatelessWidget {
                   ]),
             ),
             const Spacer(),
-            SizedBox(width: 50, child: MenuNewButton(songItem: songItem))
+            SizedBox(
+              width: 50,
+              child: MenuNewButton(songItem: songItem),
+            )
           ],
         ),
       ),

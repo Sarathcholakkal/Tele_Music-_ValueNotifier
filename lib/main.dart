@@ -5,6 +5,7 @@ import 'package:musicme/common/theme/theme.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/home/view/custom_appbar.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
+import 'package:musicme/features/playlist/model/playlist_model.dart';
 import 'package:musicme/features/splash/splash.dart';
 
 Future<void> main() async {
@@ -18,6 +19,9 @@ Future<void> main() async {
   await Hive.initFlutter();
   if (!Hive.isAdapterRegistered(SongModelClassAdapter().typeId)) {
     Hive.registerAdapter(SongModelClassAdapter());
+  }
+  if (!Hive.isAdapterRegistered(PlaylistModelClassAdapter().typeId)) {
+    Hive.registerAdapter(PlaylistModelClassAdapter());
   }
 
   runApp(const MyApp());

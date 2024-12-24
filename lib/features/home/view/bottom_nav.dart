@@ -3,6 +3,7 @@ import 'package:musicme/common/utils/const/pallets.dart';
 import 'package:musicme/features/all_songs/view/all_song_screen.dart';
 import 'package:musicme/features/favorites/view/favorites_songs_screen.dart';
 import 'package:musicme/features/home/view/home_screen.dart';
+import 'package:musicme/features/playlist/view/playlist_screen.dart';
 
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -10,7 +11,7 @@ var _screens = [
   const HomeScreen(),
   const FavoriteSongsScreen(),
   const AllSongsScreen(),
-  const HomeScreen(),
+  const PlaylistScreen(),
   // const Favtest(),
   // const ScreenAllSongs(),
   // const PlaylistScreen(),

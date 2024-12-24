@@ -24,7 +24,7 @@ class _CategorySectionState extends State<CategorySection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 75,
       // color: Colors.red,
       child: ValueListenableBuilder<List<SongModelClass>>(

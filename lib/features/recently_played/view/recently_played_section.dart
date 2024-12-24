@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
-import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
-import 'package:musicme/features/frequently_played/view/frequently_played_card.dart';
 import 'package:musicme/features/home/view/heading.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 import 'package:musicme/features/recently_played/logic/recently_played_functions.dart';
@@ -15,15 +13,16 @@ class RecentlyPlayedSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       width: double.infinity,
       // color: Colors.black,
       child: Column(
         children: [
           Heading(
-              title: "Recently Played", screen: () => RecnetlyPlayedScreen()),
-          Container(
+              title: "Recently Played",
+              screen: () => const RecnetlyPlayedScreen()),
+          SizedBox(
             height: 160,
             child: ValueListenableBuilder<List<SongModelClass>>(
                 valueListenable: recentlyPlayedNotifer,

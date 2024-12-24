@@ -5,7 +5,6 @@ import 'package:musicme/features/last_added/logic/last_added_function.dart';
 import 'package:musicme/features/last_added/view/last_added_card.dart';
 import 'package:musicme/features/last_added/view/last_added_screen.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
-import 'package:musicme/features/recently_played/view/recnetly_played_screen.dart';
 
 class LastAddedSection extends StatelessWidget {
   const LastAddedSection({

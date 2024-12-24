@@ -54,8 +54,6 @@ Future<void> addSongsToPlaylist(
     int playlistId, List<SongModelClass> selectedSongs) async {
   final playlistDB = await Hive.openBox<PlaylistModelClass>('playlistBox');
 
-  print("Adding songs to playlist with ID: $playlistId");
-
   final playlist = playlistDB.values.firstWhere(
     (playlist) => playlist.id == playlistId,
   );

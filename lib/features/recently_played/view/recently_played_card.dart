@@ -31,7 +31,7 @@ class RecentlyPlayedCard extends StatelessWidget {
                   nullArtworkWidget: const Icon(
                     Icons.music_note,
                     size: 110,
-                    color: Colors.green, // Set icon color
+                    color: Colors.green,
                   ),
                   artworkFit: BoxFit.cover,
                   artworkHeight: 110,
@@ -41,11 +41,10 @@ class RecentlyPlayedCard extends StatelessWidget {
                 )),
           ),
           const SizedBox(height: 5),
-          // Album name
           MovingTextSmall(name: singleSong.displayNameWOExt),
           Text(
             singleSong.artist,
-            style: TextStyle(fontSize: 12, color: Colors.grey),
+            style: const TextStyle(fontSize: 12, color: Colors.grey),
             overflow: TextOverflow.ellipsis,
           ),
         ],

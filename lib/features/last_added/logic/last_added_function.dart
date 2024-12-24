@@ -39,13 +39,11 @@ Future<void> storelastSongs() async {
       );
     }
   }
-  print(lastsongsDB.values);
 
   getlastSongs();
 }
 
 Future<void> getlastSongs() async {
-  print("get  last song called song called");
   final lastsongsDB = await Hive.openBox<SongModelClass>('lastsongsBox');
   lastsongsListNotifier.value.clear();
   lastsongsListNotifier.value.addAll(lastsongsDB.values);

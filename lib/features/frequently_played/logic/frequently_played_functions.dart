@@ -6,10 +6,13 @@ ValueNotifier<List<SongModelClass>> frequentlyListNotifier = ValueNotifier([]);
 
 Future<void> incrementPlayCount(SongModelClass song) async {
   final songsDB = await Hive.openBox<SongModelClass>('songsBox');
+  print("...............................................................");
+  print(song.displayNameWOExt);
 
   var existingSong = songsDB.values
       .firstWhere((s) => s.displayNameWOExt == song.displayNameWOExt);
   existingSong.playCount = (existingSong.playCount ?? 0) + 1;
+  print(existingSong.playCount);
 
   await songsDB.put(song.key, existingSong);
 

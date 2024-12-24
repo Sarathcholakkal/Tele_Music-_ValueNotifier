@@ -93,8 +93,8 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
             // Specify a unique ID for each media item:
             id: song.id.toString(),
             // Metadata to display in the notification:
-            album: song.artist ?? "no artist",
-            title: song.displayNameWOExt ?? "unknown",
+            album: song.artist,
+            title: song.displayNameWOExt,
           ),
         );
       }).toList(),

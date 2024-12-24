@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:musicme/common/utils/const/layout_spacing.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
-import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
 import 'package:musicme/features/last_added/logic/last_added_function.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:musicme/common/utils/const/layout_spacing.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
-import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 import 'package:musicme/features/recently_played/logic/recently_played_functions.dart';
 
@@ -59,12 +58,13 @@ class _RecnetlyPlayedScreen extends State<RecnetlyPlayedScreen> {
                     if (songs.isEmpty) {
                       return const Center(child: Text("Nothing found!"));
                     }
+                    var recent25songs = songs.take(30).toList();
 
                     return ListView.builder(
-                      itemCount: songs.length,
+                      itemCount: recent25songs.length,
                       shrinkWrap: true,
                       itemBuilder: (BuildContext ctx, int newindex) {
-                        final singleSongData = songs[newindex];
+                        final singleSongData = recent25songs[newindex];
                         return GestureDetector(
                           onDoubleTap: () {
                             Navigator.of(context).push(

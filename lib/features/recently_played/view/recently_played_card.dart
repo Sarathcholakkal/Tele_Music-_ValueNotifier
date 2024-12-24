@@ -38,30 +38,11 @@ class RecentlyPlayedCard extends StatelessWidget {
                   artworkWidth: 110,
                   artworkBorder: BorderRadius.circular(10),
                   artworkScale: 1,
-                )
-                // Container(
-                //   color: Colors.amber,
-                // )
-
-                //  Image.asset(
-                //   "",
-                //   fit: BoxFit.cover,
-                //   width: double.infinity,
-                // ),
-                ),
+                )),
           ),
           const SizedBox(height: 5),
           // Album name
           MovingTextSmall(name: singleSong.displayNameWOExt),
-          // Text(
-          //   singleSong.displayNameWOExt,
-          //   textAlign: TextAlign.left,
-          //   style: TextStyle(
-          //     fontSize: 14,
-          //   ),
-          //   overflow: TextOverflow.ellipsis,
-          // ),
-          // Artist name
           Text(
             singleSong.artist,
             style: TextStyle(fontSize: 12, color: Colors.grey),

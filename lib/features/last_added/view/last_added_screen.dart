@@ -3,6 +3,7 @@ import 'package:musicme/common/utils/const/layout_spacing.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
 import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
+import 'package:musicme/features/last_added/logic/last_added_function.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 
 class LastAddedScreen extends StatefulWidget {
@@ -53,17 +54,18 @@ class _LastAddedScreen extends State<LastAddedScreen> {
               child: SizedBox(
                 width: double.infinity,
                 child: ValueListenableBuilder<List<SongModelClass>>(
-                  valueListenable: frequentlyListNotifier,
+                  valueListenable: lastsongsListNotifier,
                   builder: (context, songs, child) {
                     if (songs.isEmpty) {
                       return const Center(child: Text("Nothing found!"));
                     }
+                    var last30songs = songs.take(30).toList();
 
                     return ListView.builder(
-                      itemCount: songs.length,
+                      itemCount: last30songs.length,
                       shrinkWrap: true,
                       itemBuilder: (BuildContext ctx, int newindex) {
-                        final singleSongData = songs[newindex];
+                        final singleSongData = last30songs[newindex];
                         return GestureDetector(
                           onDoubleTap: () {
                             Navigator.of(context).push(

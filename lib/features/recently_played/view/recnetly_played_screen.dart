@@ -4,6 +4,7 @@ import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
 import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
+import 'package:musicme/features/recently_played/logic/recently_played_functions.dart';
 
 class RecnetlyPlayedScreen extends StatefulWidget {
   const RecnetlyPlayedScreen({super.key});
@@ -53,7 +54,7 @@ class _RecnetlyPlayedScreen extends State<RecnetlyPlayedScreen> {
               child: SizedBox(
                 width: double.infinity,
                 child: ValueListenableBuilder<List<SongModelClass>>(
-                  valueListenable: frequentlyListNotifier,
+                  valueListenable: recentlyPlayedNotifer,
                   builder: (context, songs, child) {
                     if (songs.isEmpty) {
                       return const Center(child: Text("Nothing found!"));

@@ -4,12 +4,14 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'package:musicme/common/utils/const/helper.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/favorites/logic/db_function.dart';
+import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
 import 'package:musicme/features/playback/logic/favorite_checker.dart';
 import 'package:musicme/features/playback/view/playback_appbar.dart';
 import 'package:musicme/features/playback/view/playback_artwork.dart';
 import 'package:musicme/features/playback/view/playback_slide.dart';
 import 'package:musicme/features/playback/view/playback_songdetails.dart';
 import 'package:musicme/features/playback/view/playback_time.dart';
+import 'package:musicme/features/recently_played/logic/recently_played_functions.dart';
 
 class PlaybackScreen extends StatefulWidget {
   final List<SongModelClass> songs;
@@ -63,8 +65,8 @@ class _PlaybackScreenState extends State<PlaybackScreen> {
         if (index < widget.songs.length) {
           final currentSong = widget.songs[index];
           _updateFavoriteStatus();
-          // updateRecentlytPlayed(currentSong);
-          // incrementPlayCount(currentSong);
+          updateRecentlytPlayed(currentSong);
+          incrementPlayCount(currentSong);
         }
       }
     });

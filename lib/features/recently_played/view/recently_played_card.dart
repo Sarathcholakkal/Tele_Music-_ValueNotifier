@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:musicme/common/utils/const/helper.dart';
+import 'package:musicme/common/widgets/moving_text_small.dart';
+import 'package:musicme/features/all_songs/model/songmodel_class.dart';
+import 'package:on_audio_query/on_audio_query.dart';
 
 class RecentlyPlayedCard extends StatelessWidget {
-  const RecentlyPlayedCard({
-    super.key,
-  });
+  final SongModelClass singleSong;
+
+  const RecentlyPlayedCard({super.key, required this.singleSong});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,24 @@ class RecentlyPlayedCard extends StatelessWidget {
             height: 110,
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(0.0),
-                child: Container(
-                  color: Colors.amber,
+                child: QueryArtworkWidget(
+                  controller: Helper.query,
+                  id: singleSong.songid,
+                  type: ArtworkType.AUDIO,
+                  nullArtworkWidget: const Icon(
+                    Icons.music_note,
+                    size: 110,
+                    color: Colors.green, // Set icon color
+                  ),
+                  artworkFit: BoxFit.cover,
+                  artworkHeight: 110,
+                  artworkWidth: 110,
+                  artworkBorder: BorderRadius.circular(10),
+                  artworkScale: 1,
                 )
+                // Container(
+                //   color: Colors.amber,
+                // )
 
                 //  Image.asset(
                 //   "",
@@ -33,17 +52,18 @@ class RecentlyPlayedCard extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           // Album name
-          const Text(
-            'Album name',
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontSize: 14,
-            ),
-            overflow: TextOverflow.ellipsis,
-          ),
+          MovingTextSmall(name: singleSong.displayNameWOExt),
+          // Text(
+          //   singleSong.displayNameWOExt,
+          //   textAlign: TextAlign.left,
+          //   style: TextStyle(
+          //     fontSize: 14,
+          //   ),
+          //   overflow: TextOverflow.ellipsis,
+          // ),
           // Artist name
-          const Text(
-            'song name',
+          Text(
+            singleSong.artist,
             style: TextStyle(fontSize: 12, color: Colors.grey),
             overflow: TextOverflow.ellipsis,
           ),

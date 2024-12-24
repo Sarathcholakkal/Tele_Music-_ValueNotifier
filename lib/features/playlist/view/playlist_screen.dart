@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicme/features/playlist/logic/db_function.dart';
 import 'package:musicme/features/playlist/model/playlist_model.dart';
-import 'package:musicme/features/playlist/view/pop_up_widged.dart/playlist_add.dart';
+import 'package:musicme/features/playlist/view/pop_widgets/playlist_add.dart';
 import 'package:musicme/features/playlist/view/playlist_card.dart';
 import 'package:musicme/features/playlist/view/playlist_song_screen.dart';
 

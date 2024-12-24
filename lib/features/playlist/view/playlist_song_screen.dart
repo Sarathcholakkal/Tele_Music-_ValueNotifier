@@ -188,7 +188,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:musicme/common/utils/const/layout_spacing.dart';
-import 'package:musicme/common/utils/const/pallets.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 import 'package:musicme/features/playlist/logic/db_function.dart';

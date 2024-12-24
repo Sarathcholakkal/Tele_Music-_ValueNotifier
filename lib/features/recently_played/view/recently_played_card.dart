@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class FrequentlyCard extends StatelessWidget {
-  const FrequentlyCard({
+class RecentlyPlayedCard extends StatelessWidget {
+  const RecentlyPlayedCard({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 260,
+    return SizedBox(
+      height: 160,
       width: 120,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -16,10 +16,10 @@ class FrequentlyCard extends StatelessWidget {
         children: [
           // Album image
           SizedBox(
-            width: 150,
-            height: 200,
+            width: 110,
+            height: 110,
             child: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(0.0),
                 child: Container(
                   color: Colors.amber,
                 )

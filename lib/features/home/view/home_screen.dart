@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:musicme/features/drawer/view/drawer_widgets/drawer_widget.dart';
+import 'package:musicme/features/frequently_played/view/frequently_played_section.dart';
 import 'package:musicme/features/home/view/categorie_section.dart';
 import 'package:musicme/features/home/view/custom_appbar.dart';
 import 'package:musicme/features/home/view/name_section.dart';
+import 'package:musicme/features/last_added/view/last_added_screen.dart';
+import 'package:musicme/features/last_added/view/last_added_section.dart';
+import 'package:musicme/features/recently_played/view/recently_played_section.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,19 +30,15 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-          child: SingleChildScrollView(
+          child: const SingleChildScrollView(
             child: SizedBox(
               child: Column(
                 children: [
-                  const NameSection(),
-
-                  const CategorySection(),
-                  // FrequentlyPlayedTittle(tittle: 'Frequently Played'),
-                  // FrequentlyPlayedList(),
-                  // RecentlyPlayedTittle(tittle: "Recently Played"),
-                  // RecentlyPlayedList(),
-                  // LastAddedTittle(tittle: "Last Added"),
-                  // LastAddedList(),
+                  NameSection(),
+                  CategorySection(),
+                  FrequentlyPlayedSection(),
+                  RecentlyPlayedSection(),
+                  LastAddedSection()
                 ],
               ),
             ),

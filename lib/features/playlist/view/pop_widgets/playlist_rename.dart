@@ -20,7 +20,7 @@ class _PlaylistRenameState extends State<PlaylistRename> {
   Future<String?> openRenameDialog() => showDialog(
         context: widget.parentContext,
         builder: (context) => AlertDialog(
-          title: const Text("Rename Playlist"), // Can use const for static text
+          title: const Text("Rename Playlist"),
           content: TextField(
             autofocus: true,
             controller: controller,
@@ -33,7 +33,7 @@ class _PlaylistRenameState extends State<PlaylistRename> {
                 final newName = controller.text.trim();
                 Navigator.of(context).pop(newName.isNotEmpty ? newName : null);
               },
-              child: const Text("Submit"), // Static text can be const
+              child: const Text("Submit"),
             ),
           ],
         ),
@@ -72,10 +72,9 @@ class _PlaylistRenameState extends State<PlaylistRename> {
                     Icon(
                       Icons.edit,
                       size: 25,
-                      color: Pallete
-                          .logoGreenColor, // Pallete should be defined or imported
+                      color: Pallete.logoGreenColor,
                     ),
-                    Text("Rename Playlist"), // Text is constant
+                    Text("Rename Playlist"),
                   ],
                 ),
               ),
@@ -89,7 +88,5 @@ class _PlaylistRenameState extends State<PlaylistRename> {
   void renamePlaylist(String newName) {
     // Logic to update the playlist name
     widget.playlist.name = newName;
-    print("Playlist renamed to: $newName");
-    // Optionally, add logic to update the name in a database or state management
   }
 }

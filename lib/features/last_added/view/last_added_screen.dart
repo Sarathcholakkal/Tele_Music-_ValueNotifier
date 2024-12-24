@@ -5,14 +5,14 @@ import 'package:musicme/features/all_songs/view/all_song_card.dart';
 import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 
-class FrequentlyPlayedScreen extends StatefulWidget {
-  const FrequentlyPlayedScreen({super.key});
+class LastAddedScreen extends StatefulWidget {
+  const LastAddedScreen({super.key});
 
   @override
-  State<FrequentlyPlayedScreen> createState() => _FrequentlyPlayedScreen();
+  State<LastAddedScreen> createState() => _LastAddedScreen();
 }
 
-class _FrequentlyPlayedScreen extends State<FrequentlyPlayedScreen> {
+class _LastAddedScreen extends State<LastAddedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class _FrequentlyPlayedScreen extends State<FrequentlyPlayedScreen> {
                   ),
                   const SizedBox(
                     child: Text(
-                      "Frequently Played Songs",
+                      "Last Added Songs",
                       style: TextStyle(
                         color: Color(0xFF5B5A5F),
                         fontSize: 19,

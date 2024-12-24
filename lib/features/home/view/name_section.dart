@@ -8,8 +8,7 @@ class NameSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
+    return SizedBox(
       width: double.infinity,
       height: 35,
       child: Text.rich(

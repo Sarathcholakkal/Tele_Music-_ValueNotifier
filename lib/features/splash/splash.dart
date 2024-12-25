@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:musicme/features/all_songs/logic/db_functions.dart';
 import 'package:musicme/features/home/view/bottom_nav.dart';
-import 'package:musicme/features/last_added/logic/last_added_function.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
 import 'package:musicme/features/on_boarding/view/on_boarding_screen.dart';
 import 'package:musicme/features/recently_played/logic/recently_played_functions.dart';
@@ -42,8 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> initDatabase() async {
     await storeSongs();
     await getSongs();
-    await storelastSongs();
-    await getlastSongs();
+    // await storelastSongs();
+    // await getlastSongs();
     await fetchRecentlyPlayedSongs();
   }
   //?============================================================================ permissionStatusChecker====================

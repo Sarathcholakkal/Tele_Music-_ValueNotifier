@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
 
 final lightMode = ThemeData(
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF1DB954), // Spotify green
-      brightness: Brightness.light,
-    ).copyWith(
-      primary: const Color(0xFF1DB954),
-      onPrimary: Colors.white,
-      secondary: const Color(0xFF191414),
-      onSecondary: Colors.white,
-      // Black text on light background
-      surface: Colors.white, // Light surface
-      onSurface: const Color(0xFF000000), // Black text/icons on surface
-      error: const Color(0xFFD32F2F),
-      onError: Colors.white,
-      tertiary: const Color(0xFF9E9E9E), // Light gray for tertiary elements
-      outline: const Color(0xFFBDBDBD), // Light gray for borders/dividers
-      shadow: const Color(0xFF000000),
-    ),
-    appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.white, // Primary color
-      foregroundColor: Colors.black, // Text/icon color
-    ),
-    navigationBarTheme: const NavigationBarThemeData(
-        backgroundColor: Color(0xFF919199), shadowColor: Colors.black));
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: const Color(0xFF1DB954), // Spotify green
+    brightness: Brightness.light,
+  ).copyWith(
+    primary: const Color(0xFF1DB954),
+    onPrimary: Colors.white,
+    secondary: const Color(0xFF191414),
+    onSecondary: Colors.white,
+    // Black text on light background
+    surface: Colors.white, // Light surface
+    onSurface: const Color(0xFF000000), // Black text/icons on surface
+    error: const Color(0xFFD32F2F),
+    onError: Colors.white,
+    tertiary: const Color(0xFF9E9E9E), // Light gray for tertiary elements
+    outline: const Color(0xFFBDBDBD), // Light gray for borders/dividers
+    shadow: const Color(0xFF000000),
+  ),
+  appBarTheme: const AppBarTheme(
+    backgroundColor: Colors.white, // Primary color
+    foregroundColor: Colors.black, // Text/icon color
+  ),
+  navigationBarTheme: const NavigationBarThemeData(
+    backgroundColor: Color(0xFF919199),
+    shadowColor: Colors.black,
+  ),
+  bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
+);
 
 // Define the dark theme
 final darkMode = ThemeData(
@@ -52,4 +56,5 @@ final darkMode = ThemeData(
     shadowColor: Colors.white,
     backgroundColor: Colors.white,
   ),
+  bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
 );

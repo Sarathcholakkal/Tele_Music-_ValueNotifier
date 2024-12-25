@@ -114,7 +114,7 @@ class _PopupMenuState extends State<PopupMenu> {
                 openRenamDialog();
               },
               icon: const Icon(
-                Icons.delete,
+                Icons.edit,
               ),
               label: const Text(
                 "Rename",

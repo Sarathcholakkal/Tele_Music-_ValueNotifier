@@ -19,7 +19,6 @@ class LoginForm extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
-            // Directly use Column without Expanded
             children: [
               TextFormField(
                 keyboardType: TextInputType.text,
@@ -34,7 +33,7 @@ class LoginForm extends StatelessWidget {
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: Colors.grey[200],
                   hintText: 'Enter your name',
                   hintStyle: TextStyle(color: Colors.grey[400]),
                   contentPadding: const EdgeInsets.fromLTRB(20, 15, 10, 15),
@@ -54,11 +53,13 @@ class LoginForm extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: 'Disclaimer: ',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black),
                     ),
                     TextSpan(
                       text:
                           'We respect your privacy more than anything else. All of your data is stored locally on your devices.',
+                      style: TextStyle(color: Colors.black),
                     ),
                   ],
                 ),

@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:musicme/features/all_songs/logic/fetch_function.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
+import 'package:musicme/features/last_added/logic/funciton.dart';
 
 ValueNotifier<List<SongModelClass>> songsListNotifier = ValueNotifier([]);
 
 Future<void> storeSongs() async {
-  final songs = await filterSongs(fetchSongs());
+  final songs = await filterSongs(fetchlastSongs());
 
   final songsDB = await Hive.openBox<SongModelClass>('songsBox');
 
@@ -44,6 +45,7 @@ Future<void> getSongs() async {
   final songsDB = await Hive.openBox<SongModelClass>('songsBox');
   songsListNotifier.value.clear();
   songsListNotifier.value.addAll(songsDB.values);
+  lastsongsListNotifier.value.addAll(songsDB.values.take(30));
   songsListNotifier.notifyListeners();
 }
 

@@ -35,9 +35,6 @@ class _FrequentlyPlayedScreen extends State<FrequentlyPlayedScreen> {
                       },
                       icon: const Icon(Icons.arrow_back_ios_new_rounded)),
                   const SizedBox(
-                    width: 80,
-                  ),
-                  const SizedBox(
                     child: Text(
                       "Frequently Played Songs",
                       style: TextStyle(
@@ -45,7 +42,8 @@ class _FrequentlyPlayedScreen extends State<FrequentlyPlayedScreen> {
                         fontSize: 19,
                       ),
                     ),
-                  )
+                  ),
+                  const Spacer()
                 ],
               ),
             ),

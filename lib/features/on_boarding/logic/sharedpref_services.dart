@@ -22,4 +22,8 @@ class SharedprefServices {
     var checkName = getName();
     return checkName != null && checkName.isNotEmpty;
   }
+
+  static Future<void> clearAll() async {
+    await prefs.clear();
+  }
 }

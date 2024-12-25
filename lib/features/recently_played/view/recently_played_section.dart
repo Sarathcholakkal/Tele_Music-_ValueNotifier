@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicme/features/all_songs/logic/db_functions.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/home/view/heading.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
@@ -25,7 +26,9 @@ class RecentlyPlayedSection extends StatelessWidget {
           SizedBox(
             height: 160,
             child: ValueListenableBuilder<List<SongModelClass>>(
-                valueListenable: recentlyPlayedNotifer,
+                valueListenable: recentlyPlayedNotifer.value.isEmpty
+                    ? songsListNotifier
+                    : recentlyPlayedNotifer,
                 builder: (BuildContext context, List<SongModelClass> songs, _) {
                   var recently30songs = songs.take(30).toList();
                   return ListView.separated(

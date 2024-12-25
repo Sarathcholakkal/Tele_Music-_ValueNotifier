@@ -28,7 +28,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               child: TextButton(
                 onPressed: () {
                   if (signInKey.currentState!.validate()) {
-                    debugPrint('form validated');
                     setValueInSharedprfs();
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
@@ -40,9 +39,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   }
                 },
                 style: TextButton.styleFrom(
-                  backgroundColor:
-                      const Color(0xFF919199), // Button background color
-                  foregroundColor: Colors.white, // Text and icon color
+                  backgroundColor: const Color(0xFF919199),
+                  foregroundColor: Colors.white,
+
                   padding: const EdgeInsets.symmetric(
                       horizontal: 140,
                       vertical: 14), // Padding inside the button
@@ -52,8 +51,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 ),
                 child: const Text(
                   "GetStarted",
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, letterSpacing: 3),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 3,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             )
@@ -94,7 +96,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
             ),
       body: Container(
-        padding: const EdgeInsets.only(bottom: 80),
+        color: Colors.white,
+        // padding: const EdgeInsets.only(bottom: 80),
         child: PageView(
           controller: _pageController,
           onPageChanged: (index) {

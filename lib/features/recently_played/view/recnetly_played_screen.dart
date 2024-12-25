@@ -35,9 +35,6 @@ class _RecnetlyPlayedScreen extends State<RecnetlyPlayedScreen> {
                       },
                       icon: const Icon(Icons.arrow_back_ios_new_rounded)),
                   const SizedBox(
-                    width: 80,
-                  ),
-                  const SizedBox(
                     child: Text(
                       "Recently Played Songs",
                       style: TextStyle(
@@ -45,7 +42,8 @@ class _RecnetlyPlayedScreen extends State<RecnetlyPlayedScreen> {
                         fontSize: 19,
                       ),
                     ),
-                  )
+                  ),
+                  const Spacer()
                 ],
               ),
             ),

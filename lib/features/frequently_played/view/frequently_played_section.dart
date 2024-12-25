@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicme/features/all_songs/logic/db_functions.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/frequently_played/logic/frequently_played_functions.dart';
 import 'package:musicme/features/frequently_played/view/frequently_played_card.dart';
@@ -25,7 +26,9 @@ class FrequentlyPlayedSection extends StatelessWidget {
           SizedBox(
             height: 260,
             child: ValueListenableBuilder<List<SongModelClass>>(
-                valueListenable: frequentlyListNotifier,
+                valueListenable: frequentlyListNotifier.value.isEmpty
+                    ? songsListNotifier
+                    : frequentlyListNotifier,
                 builder: (BuildContext context,
                     List<SongModelClass> frequentsongs, _) {
                   return ListView.separated(

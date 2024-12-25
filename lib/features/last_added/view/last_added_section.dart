@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:musicme/features/all_songs/logic/db_functions.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/home/view/heading.dart';
-import 'package:musicme/features/last_added/logic/last_added_function.dart';
+import 'package:musicme/features/last_added/logic/funciton.dart';
 import 'package:musicme/features/last_added/view/last_added_card.dart';
 import 'package:musicme/features/last_added/view/last_added_screen.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
@@ -23,7 +24,9 @@ class LastAddedSection extends StatelessWidget {
           SizedBox(
             height: 190,
             child: ValueListenableBuilder<List<SongModelClass>>(
-                valueListenable: lastsongsListNotifier,
+                valueListenable: lastsongsListNotifier.value.isEmpty
+                    ? songsListNotifier
+                    : lastsongsListNotifier,
                 builder: (context, songs, child) {
                   var last30songs = songs.take(30).toList();
                   return ListView.separated(

@@ -30,7 +30,6 @@ class OnbordingBox extends StatelessWidget {
             height: 180,
             margin: const EdgeInsets.only(top: 500),
             width: double.infinity,
-            // color: Colors.amber,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,12 +37,14 @@ class OnbordingBox extends StatelessWidget {
                 Text(
                   headline,
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
                 Text(
                   description,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                 )
               ],
             ),

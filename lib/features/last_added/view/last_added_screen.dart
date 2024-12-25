@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicme/common/utils/const/layout_spacing.dart';
 import 'package:musicme/features/all_songs/model/songmodel_class.dart';
 import 'package:musicme/features/all_songs/view/all_song_card.dart';
-import 'package:musicme/features/last_added/logic/last_added_function.dart';
+import 'package:musicme/features/last_added/logic/funciton.dart';
 import 'package:musicme/features/playback/view/playback_screen.dart';
 
 class LastAddedScreen extends StatefulWidget {
@@ -35,9 +35,6 @@ class _LastAddedScreen extends State<LastAddedScreen> {
                       },
                       icon: const Icon(Icons.arrow_back_ios_new_rounded)),
                   const SizedBox(
-                    width: 80,
-                  ),
-                  const SizedBox(
                     child: Text(
                       "Last Added Songs",
                       style: TextStyle(
@@ -45,7 +42,8 @@ class _LastAddedScreen extends State<LastAddedScreen> {
                         fontSize: 19,
                       ),
                     ),
-                  )
+                  ),
+                  const Spacer()
                 ],
               ),
             ),

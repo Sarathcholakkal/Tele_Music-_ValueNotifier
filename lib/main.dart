@@ -40,10 +40,7 @@ class MyApp extends StatelessWidget {
           theme: lightMode,
           darkTheme: darkMode,
           themeMode: themeMode,
-          home:
-              //  BottomNav()
-              // HomeScreen()
-              const SplashScreen(),
+          home: const SplashScreen(),
         );
       },
     );

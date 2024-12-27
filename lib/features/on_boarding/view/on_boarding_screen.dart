@@ -34,6 +34,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         builder: (context) => const BottomNav(),
                       ),
                     );
+                    nameController.clear();
                   } else {
                     debugPrint("form not vlidated");
                   }

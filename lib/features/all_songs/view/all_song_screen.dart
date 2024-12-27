@@ -28,6 +28,12 @@ class _AllSongsScreenState extends State<AllSongsScreen> {
   }
 
   @override
+  void dispose() {
+    searchController.dispose(); // Dispose of the controller
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Builder(builder: (context) {
       return Container(

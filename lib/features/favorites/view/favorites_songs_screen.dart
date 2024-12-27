@@ -29,6 +29,12 @@ class _FavoriteSongsScreenState extends State<FavoriteSongsScreen> {
   }
 
   @override
+  void dispose() {
+    searchController.dispose(); // Dispose of the controller
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
       future: getFavSongs(), // Load the data initially

@@ -35,6 +35,8 @@ dependencies:
   fluttertoast: ^8.2.10
   marquee_text: ^2.5.0+1
   flutter_marquee: ^2.0.1
+  rename: ^3.0.2
+  
 # To dev dependecyies are menioned below.............
 
 dev_dependencies:
@@ -44,7 +46,14 @@ dev_dependencies:
  
   flutter_lints: ^4.0.0
   build_runner: ^2.4.13
-
+  flutter_launcher_icons: ^0.14.2
+flutter_icons: 
+  image_path: "assets/image/musicmelogo.png"
+  android: true
+  ios: true
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/image/musicmelogo.png"
 
 
 flutter:

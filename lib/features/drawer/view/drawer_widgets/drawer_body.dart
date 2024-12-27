@@ -5,7 +5,6 @@ import 'package:musicme/features/drawer/view/drawer_screen/privacy_policy_screen
 import 'package:musicme/features/drawer/view/drawer_screen/send_feedback.dart';
 import 'package:musicme/features/drawer/view/drawer_widgets/drawer_enum.dart';
 import 'package:musicme/features/on_boarding/logic/sharedpref_services.dart';
-import 'package:musicme/features/on_boarding/view/on_boarding_login.dart';
 import 'package:musicme/features/on_boarding/view/on_boarding_screen.dart';
 
 ValueNotifier<DrawerSection> currentPage = ValueNotifier(DrawerSection.none);
